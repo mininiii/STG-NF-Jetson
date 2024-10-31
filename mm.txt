@@ -1,0 +1,19 @@
+[yolov8로 포즈추출, 트래킹]
+
+ssh [myyang@168.188.125.164](mailto:myyang@168.188.125.164)
+
+min020521
+
+docker exec -it ymy_cont1 /bin/bash
+
+source /yolo_venv/bin/activate
+
+cd /workspace/STG-NF
+
+(train 데이터셋)
+
+python gen_data_yolov8n.py --dir /workspace/dataset/aihub_data_upload/video_data_training/ --outdir /workspace/STG-NF/data/AIHub/pose/train_yolov8 --video
+
+(test 데이터셋)
+
+python gen_data_yolov8n.py --dir /workspace/dataset/aihub_data_upload/video_data_val/ --outdir /workspace/STG-NF/data/AIHub/pose/test_yolov8 --video
